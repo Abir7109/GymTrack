@@ -103,5 +103,3 @@ This project is licensed under the MIT License — see the [LICENSE](LICENSE) fi
 Made with care for fitness enthusiasts.
 
 </div>
-
-Hello , autopush testing 
