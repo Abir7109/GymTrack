@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="website/assets/dashboard.jpeg" width="120" alt="GymTrack">
+<img src="website/assets/icon.png" width="120" height="120" alt="GymTrack">
 
 # GymTrack
 
@@ -37,18 +37,6 @@ No ads. No sign-up. No BS.
 - **Dashboard** — Daily overview with calories, duration, and streak tracking
 - **Offline First** — Full functionality without an internet connection
 - **Dark Theme** — Easy on the eyes, looks great in the gym
-
----
-
-## Screenshots
-
-<div align="center">
-
-| Dashboard | Workout Library | Progress |
-|:---------:|:---------------:|:--------:|
-| <img src="website/assets/dashboard.jpeg" width="250"> | <img src="website/assets/Workout Library.jpeg" width="250"> | <img src="website/assets/Progress.jpeg" width="250"> |
-
-</div>
 
 ---
 
