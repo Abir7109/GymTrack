@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GymTrack — Your Ultimate Fitness Companion</title>
+  <meta name="description" content="Track workouts, crush goals, transform your body. GymTrack is the smartest fitness tracking app designed for champions.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Custom Cursor -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-outline" id="cursorOutline"></div>
+
+  <!-- Particle Canvas -->
+  <canvas id="particleCanvas"></canvas>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        <div class="logo-icon"><i class="fas fa-dumbbell"></i></div>
+        <span class="logo-text">Gym<span class="gradient-text">Track</span></span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="#tools" class="nav-link">Tools</a>
+        <a href="#showcase" class="nav-link">Showcase</a>
+        <a href="#download" class="nav-link nav-cta">Download <i class="fas fa-download"></i></a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-bg-orbs">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge animate-in">
+        <span class="badge-pulse"></span>
+        <span>Free &middot; Open Source &middot; No Ads</span>
+      </div>
+      <h1 class="hero-title animate-in">
+        Track Every Rep.<br>
+        <span class="gradient-text-hero">Crush Every Goal.</span>
+      </h1>
+      <p class="hero-subtitle animate-in">
+        The fitness tracker that feels like a game. Log workouts, chase PRs, and build the body you want — with tools that actually work.
+      </p>
+      <div class="hero-buttons animate-in">
+        <a href="#tools" class="btn btn-primary magnetic-btn">
+          <span class="btn-content">
+            <i class="fas fa-calculator"></i>
+            Try Free Tools
+          </span>
+          <span class="btn-glow"></span>
+        </a>
+        <a href="#download" class="btn btn-secondary magnetic-btn">
+          <span class="btn-content">
+            <i class="fas fa-download"></i>
+            Download App
+          </span>
+        </a>
+      </div>
+      <div class="hero-stats animate-in">
+        <div class="hero-stat">
+          <div class="hero-stat-num">50K+</div>
+          <div class="hero-stat-label">Athletes</div>
+        </div>
+        <div class="hero-stat-divider"></div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">2.5M+</div>
+          <div class="hero-stat-label">Workouts</div>
+        </div>
+        <div class="hero-stat-divider"></div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">4.9</div>
+          <div class="hero-stat-label">Rating</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual animate-in">
+      <div class="phone-mockup">
+        <div class="phone-glow"></div>
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="app-preview">
+              <div class="app-header">
+                <div class="app-greeting">Good Morning</div>
+                <div class="app-avatar-ring">
+                  <div class="app-avatar"><i class="fas fa-user"></i></div>
+                </div>
+              </div>
+              <div class="app-stats-row">
+                <div class="app-stat-card glass-card-mini">
+                  <div class="stat-icon orange"><i class="fas fa-fire"></i></div>
+                  <div class="stat-value">847</div>
+                  <div class="stat-label">Calories</div>
+                </div>
+                <div class="app-stat-card glass-card-mini">
+                  <div class="stat-icon cyan"><i class="fas fa-clock"></i></div>
+                  <div class="stat-value">52<span>min</span></div>
+                  <div class="stat-label">Duration</div>
+                </div>
+              </div>
+              <div class="app-workout-card glass-card-mini">
+                <div class="workout-header">
+                  <span class="workout-type">Push Day</span>
+                  <span class="workout-status">Active</span>
+                </div>
+                <div class="workout-progress-bar">
+                  <div class="workout-progress-fill" style="width: 65%"></div>
+                </div>
+                <div class="workout-exercises">
+                  <div class="exercise-item done"><i class="fas fa-check-circle"></i> Bench Press</div>
+                  <div class="exercise-item done"><i class="fas fa-check-circle"></i> Overhead Press</div>
+                  <div class="exercise-item active"><i class="fas fa-spinner fa-spin"></i> Incline DB Press</div>
+                  <div class="exercise-item"><i class="far fa-circle"></i> Cable Flyes</div>
+                  <div class="exercise-item"><i class="far fa-circle"></i> Tricep Pushdown</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="floating-card floating-card-1 glass-card-float">
+          <i class="fas fa-trophy"></i>
+          <div>
+            <div class="fc-title">New PR!</div>
+            <div class="fc-sub">Bench Press 100kg</div>
+          </div>
+        </div>
+        <div class="floating-card floating-card-2 glass-card-float">
+          <i class="fas fa-fire"></i>
+          <div>
+            <div class="fc-title">7 Day Streak</div>
+            <div class="fc-sub">Keep crushing it!</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Tools Section -->
+  <section class="tools" id="tools">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="section-tag"><i class="fas fa-bolt"></i> Free Fitness Tools</span>
+        <h2 class="section-title">Tools That <span class="gradient-text">Actually Work</span></h2>
+        <p class="section-desc">No sign-up needed. No BS. Just enter your numbers and get instant results. Try them right now.</p>
+      </div>
+
+      <!-- Tab Navigation -->
+      <div class="tools-tabs animate-on-scroll">
+        <button class="tool-tab active" data-tab="orm">
+          <i class="fas fa-chart-bar"></i> 1RM Calculator
+        </button>
+        <button class="tool-tab" data-tab="timer">
+          <i class="fas fa-stopwatch"></i> Rest Timer
+        </button>
+        <button class="tool-tab" data-tab="plates">
+          <i class="fas fa-weight-hanging"></i> Plate Calculator
+        </button>
+      </div>
+
+      <!-- 1RM Calculator -->
+      <div class="tool-panel active" id="panel-orm">
+        <div class="tool-card glass-tool">
+          <div class="tool-split">
+            <div class="tool-inputs">
+              <h3>One Rep Max Calculator</h3>
+              <p class="tool-desc">Enter the weight you lifted and how many reps. We'll estimate your true 1RM using the Epley formula.</p>
+              <div class="input-group">
+                <label>Weight Lifted</label>
+                <div class="input-with-unit">
+                  <input type="number" id="orm-weight" placeholder="100" min="1" max="1000" value="100">
+                  <span class="input-unit">kg</span>
+                </div>
+              </div>
+              <div class="input-group">
+                <label>Reps Performed</label>
+                <div class="input-with-unit">
+                  <input type="number" id="orm-reps" placeholder="5" min="1" max="30" value="5">
+                  <span class="input-unit">reps</span>
+                </div>
+              </div>
+              <button class="tool-btn" id="calc-orm">
+                <i class="fas fa-calculator"></i> Calculate 1RM
+              </button>
+            </div>
+            <div class="tool-results" id="orm-results">
+              <div class="result-hero">
+                <div class="result-label">Estimated 1RM</div>
+                <div class="result-value" id="orm-result-value">—</div>
+                <div class="result-unit">kg</div>
+              </div>
+              <div class="result-breakdown">
+                <div class="result-row"><span>90%</span><span id="orm-90">—</span></div>
+                <div class="result-row"><span>85%</span><span id="orm-85">—</span></div>
+                <div class="result-row"><span>80%</span><span id="orm-80">—</span></div>
+                <div class="result-row"><span>75%</span><span id="orm-75">—</span></div>
+                <div class="result-row"><span>70%</span><span id="orm-70">—</span></div>
+                <div class="result-row"><span>65%</span><span id="orm-65">—</span></div>
+                <div class="result-row"><span>60%</span><span id="orm-60">—</span></div>
+                <div class="result-row"><span>50%</span><span id="orm-50">—</span></div>
+              </div>
+              <div class="result-tip">
+                <i class="fas fa-lightbulb"></i>
+                <span id="orm-tip">Enter your numbers to see results</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rest Timer -->
+      <div class="tool-panel" id="panel-timer">
+        <div class="tool-card glass-tool">
+          <div class="timer-layout">
+            <h3>Rest Timer</h3>
+            <p class="tool-desc">Pick a duration and start the timer. Perfect for between sets.</p>
+            <div class="timer-presets">
+              <button class="timer-preset" data-seconds="30">30s</button>
+              <button class="timer-preset active" data-seconds="60">60s</button>
+              <button class="timer-preset" data-seconds="90">90s</button>
+              <button class="timer-preset" data-seconds="120">2min</button>
+              <button class="timer-preset" data-seconds="180">3min</button>
+              <button class="timer-preset" data-seconds="300">5min</button>
+            </div>
+            <div class="timer-display">
+              <svg class="timer-ring" viewBox="0 0 200 200">
+                <circle cx="100" cy="100" r="90" class="timer-ring-bg"/>
+                <circle cx="100" cy="100" r="90" class="timer-ring-fill" id="timer-ring-fill"/>
+              </svg>
+              <div class="timer-center">
+                <div class="timer-time" id="timer-display">1:00</div>
+                <div class="timer-label" id="timer-status">Ready</div>
+              </div>
+            </div>
+            <div class="timer-controls">
+              <button class="timer-btn timer-start" id="timer-start">
+                <i class="fas fa-play"></i> Start
+              </button>
+              <button class="timer-btn timer-reset" id="timer-reset">
+                <i class="fas fa-redo"></i> Reset
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Plate Calculator -->
+      <div class="tool-panel" id="panel-plates">
+        <div class="tool-card glass-tool">
+          <div class="tool-split">
+            <div class="tool-inputs">
+              <h3>Barbell Plate Calculator</h3>
+              <p class="tool-desc">Enter your target weight and we'll tell you exactly which plates to load on each side.</p>
+              <div class="input-group">
+                <label>Target Weight</label>
+                <div class="input-with-unit">
+                  <input type="number" id="plate-weight" placeholder="140" min="20" max="500" value="140">
+                  <span class="input-unit">kg</span>
+                </div>
+              </div>
+              <div class="input-group">
+                <label>Bar Weight</label>
+                <div class="bar-options">
+                  <button class="bar-option" data-bar="15">15kg</button>
+                  <button class="bar-option active" data-bar="20">20kg</button>
+                  <button class="bar-option" data-bar="25">25kg</button>
+                </div>
+              </div>
+              <button class="tool-btn" id="calc-plates">
+                <i class="fas fa-weight-hanging"></i> Calculate Plates
+              </button>
+            </div>
+            <div class="tool-results" id="plate-results">
+              <div class="result-hero">
+                <div class="result-label">Per Side</div>
+                <div class="result-value" id="plate-per-side">—</div>
+                <div class="result-unit">kg each side</div>
+              </div>
+              <div class="plate-visual" id="plate-visual">
+                <div class="plate-bar">
+                  <div class="plate-bar-line"></div>
+                  <div class="plate-side" id="plate-side-left"></div>
+                  <div class="plate-barbell">Bar</div>
+                  <div class="plate-side" id="plate-side-right"></div>
+                </div>
+              </div>
+              <div class="result-breakdown" id="plate-breakdown">
+                <!-- Filled by JS -->
+              </div>
+              <div class="result-tip">
+                <i class="fas fa-lightbulb"></i>
+                <span id="plate-tip">Enter target weight to see plate breakdown</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- App Showcase — real screenshots -->
+  <section class="showcase" id="showcase">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="section-tag"><i class="fas fa-eye"></i> The App</span>
+        <h2 class="section-title">Designed to Feel <span class="gradient-text">Unreal</span></h2>
+        <p class="section-desc">Real screenshots from the app. Every pixel is intentional.</p>
+      </div>
+      <div class="showcase-row animate-on-scroll">
+        <div class="showcase-img-card">
+          <div class="showcase-img-glow"></div>
+          <img src="assets/dashboard.jpeg" alt="GymTrack Dashboard — weekly progress, streak tracking, body stats" loading="lazy">
+          <div class="showcase-img-label">
+            <i class="fas fa-th-large"></i> Dashboard
+          </div>
+        </div>
+        <div class="showcase-img-card featured">
+          <div class="showcase-img-glow"></div>
+          <img src="assets/Workout Library.jpeg" alt="GymTrack Workout Library — exercise database with search and filters" loading="lazy">
+          <div class="showcase-img-label">
+            <i class="fas fa-dumbbell"></i> Workout Library
+          </div>
+        </div>
+        <div class="showcase-img-card">
+          <div class="showcase-img-glow"></div>
+          <img src="assets/Progress.jpeg" alt="GymTrack Progress — charts, personal records, body measurements" loading="lazy">
+          <div class="showcase-img-label">
+            <i class="fas fa-chart-line"></i> Progress
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Download CTA -->
+  <section class="download" id="download">
+    <div class="download-bg">
+      <div class="download-orb download-orb-1"></div>
+      <div class="download-orb download-orb-2"></div>
+    </div>
+    <div class="container">
+      <div class="download-content animate-on-scroll">
+        <span class="section-tag light"><i class="fas fa-rocket"></i> Get Started</span>
+        <h2 class="download-title">Ready to Build<br><span class="gradient-text-hero">Your Best Body?</span></h2>
+        <p class="download-desc">Free to download. No ads. No sign-up required. Just open and start tracking.</p>
+        <div class="download-buttons">
+          <a href="#" class="download-btn-primary magnetic-btn">
+            <span class="btn-content">
+              <i class="fas fa-download"></i>
+              <div>
+                <strong>Download APK</strong>
+                <small>Free &middot; v2.1.0 &middot; 28 MB</small>
+              </div>
+            </span>
+          </a>
+        </div>
+        <div class="download-features">
+          <div class="dl-feature"><i class="fas fa-check-circle"></i> Free Forever</div>
+          <div class="dl-feature"><i class="fas fa-check-circle"></i> No Ads</div>
+          <div class="dl-feature"><i class="fas fa-check-circle"></i> Offline</div>
+          <div class="dl-feature"><i class="fas fa-check-circle"></i> Privacy First</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-glow"></div>
+    <div class="container">
+      <div class="footer-cta animate-on-scroll">
+        <h2>Start your <span class="gradient-text">transformation</span> today.</h2>
+        <p>Join thousands of athletes who trust GymTrack to track their progress.</p>
+        <a href="#download" class="btn btn-primary magnetic-btn">
+          <span class="btn-content"><i class="fas fa-download"></i> Download Free</span>
+          <span class="btn-glow"></span>
+        </a>
+      </div>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="nav-logo">
+            <div class="logo-icon"><i class="fas fa-dumbbell"></i></div>
+            <span class="logo-text">Gym<span class="gradient-text">Track</span></span>
+          </a>
+          <p>The fitness tracker that feels like a game. Track every rep, crush every goal.</p>
+          <div class="footer-socials">
+            <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" class="social-link" aria-label="Discord"><i class="fab fa-discord"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Product</h4>
+            <a href="#tools">Free Tools</a>
+            <a href="#showcase">Screenshots</a>
+            <a href="#download">Download</a>
+            <a href="#">Changelog</a>
+          </div>
+          <div class="footer-col">
+            <h4>Resources</h4>
+            <a href="#">Workout Guides</a>
+            <a href="#">Nutrition Tips</a>
+            <a href="#">Exercise Library</a>
+            <a href="#">Blog</a>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <a href="#">About</a>
+            <a href="#">Careers</a>
+            <a href="#">Contact</a>
+            <a href="#">Press Kit</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 GymTrack. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
